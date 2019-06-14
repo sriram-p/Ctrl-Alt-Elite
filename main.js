@@ -1,6 +1,6 @@
 const electron = require('electron')
 const path = require('path')
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, Menu } = require('electron')
 const url = require('url')
 
 
@@ -11,6 +11,7 @@ function createWindow () {
     win = new BrowserWindow({
     width: 800,
     height: 600,
+        show:false,
     icon: path.join(__dirname, './public/images/nineleaps_logo.png'),
     webPreferences: {
       nodeIntegration: true
@@ -24,6 +25,10 @@ function createWindow () {
     protocol: 'file',
     slashes: true
   }));
+
+    win.once('ready-to-show', () => {
+        win.show()
+    });
 
   win.on('closed', () => {
     // Dereference the window object, usually you would store windows
