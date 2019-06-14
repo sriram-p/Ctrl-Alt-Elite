@@ -1,0 +1,28 @@
+{
+  "name": "ctrl-alt-elite",
+  "version": "1.0.0",
+  "description": "Nineleaps hackathon project",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sriram-p/Ctrl-Alt-Elite.git"
+  },
+  "keywords": [
+    "javascript",
+    "nodejs",
+    "electron"
+  ],
+  "author": "Ctrl Alt Elite",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sriram-p/Ctrl-Alt-Elite/issues"
+  },
+  "homepage": "https://github.com/sriram-p/Ctrl-Alt-Elite#readme",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "electron": "^5.0.3"
+  }
+}
