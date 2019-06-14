@@ -1,18 +1,40 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Index</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen"
+        href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/index.css" />
-    
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 </head>
+
 <body>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyApws7c76Ndiicm-84XrAXNLP5qZlBTaFM",
+            authDomain: "ctrl-alt-elite-e065c.firebaseapp.com",
+            databaseURL: "https://ctrl-alt-elite-e065c.firebaseio.com",
+            projectId: "ctrl-alt-elite-e065c",
+            storageBucket: "ctrl-alt-elite-e065c.appspot.com",
+            messagingSenderId: "29345198530",
+            appId: "1:29345198530:web:3f278d56fd09788a"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
 
     <button onclick="readme()" class="btn btn-primary">Click me</button>
     <script src="../renderer/index.js"></script>
+
 </body>
+
 </html>
