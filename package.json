@@ -4,7 +4,7 @@
   "description": "Nineleaps hackathon project",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "nodemon --watch * --exec \"electron .\""
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,9 @@
   },
   "homepage": "https://github.com/sriram-p/Ctrl-Alt-Elite#readme",
   "dependencies": {
+    "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
-    "electron": "^5.0.3"
+    "electron": "^5.0.3",
+    "firebase-tools": "^7.0.0"
   }
 }
