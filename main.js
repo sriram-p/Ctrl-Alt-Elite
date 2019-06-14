@@ -9,19 +9,21 @@ let win;
 function createWindow () {
   // Create the browser window.
     win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1200,
+    height: 1000,
         show:false,
     icon: path.join(__dirname, './public/images/nineleaps_logo.png'),
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      webviewTag: true,
+      preload: path.join(__dirname, 'preload.js')
     }
   })
 
   // and load the index.html of the app.
 //   win.loadFile(path.join(__dirname, './html/index.html'));
   win.loadURL(url.format({
-    pathname: path.join(__dirname, './public/html/index.html'),
+    pathname: path.join(__dirname, './public/html/webView.html'),
     protocol: 'file',
     slashes: true
   }));

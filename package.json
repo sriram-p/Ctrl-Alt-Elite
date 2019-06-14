@@ -4,7 +4,7 @@
   "description": "Nineleaps hackathon project",
   "main": "main.js",
   "scripts": {
-    "start": "nodemon --watch * --exec \"electron .\""
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,6 @@
     "bootstrap": "^4.3.1",
     "electron": "^5.0.3",
     "firebase-tools": "^7.0.0",
-    "nodemon":"^1.19.1"
+    "nodemon": "^1.19.1"
   }
 }
