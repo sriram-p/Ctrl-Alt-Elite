@@ -61,15 +61,22 @@
                 <div class="row">
                 <div class="col-lg-5">
                         <webview id = "split-web-view1" src = "https://www.github.com" style = 
-                            "width:580px; height:100vh;">
+                            "width:500px; height:100vh; overflow: scroll">
                             <div class = "indicator"></div>
                         </webview>
                 </div>
                 <div class="col-lg-1"></div>
-                <div class="col-lg-5">
-                        <webview id = "split-web-view2" src = "https://www.github.com" style = 
-                            "width:580px; height:100vh;">
-                            <div class = "indicator"></div>
+                <div class="col-lg-5"
+                     id="splitview2"
+                     ondragenter="return dragEnter(event)"
+                     ondrop="return dragDrop(event)"
+                     ondragover="return dragOver(event)"
+                >
+                        <webview
+                                id = "split-web-view2" src = "./dropApp.html"
+                                 style ="width:600px; height:100vh;overflow: scroll"
+                        >
+
                         </webview>
                 </div>
             </div>

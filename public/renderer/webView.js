@@ -13,10 +13,30 @@ onload = () => {
 
     webview.addEventListener('did-start-loading', loadstart)
     webview.addEventListener('did-stop-loading', loadstop)
+    const webview2 = document.getElementById('split-web-view2');
+    webview2.src="../html/dropApp.html"
 };
-
-const iconArray = ['../images/gmail.png', '../images/slack.png', '../images/docs.png'];
-const iconUrl = ['https://mail.google.com/', 'https://slack.com', 'https://docs.google.com/'];
+let currIndex=0;
+const iconObj=[
+    {
+        name:'../images/gmail.png',
+        url:'https://mail.google.com/',
+    },
+    {
+        name:'../images/slack.png',
+        url:'https://slack.com',
+    },
+    {
+        name:'../images/docs.png',
+        url:'https://docs.google.com/',
+    },
+    {
+        name:'../images/github.png',
+        url:"https://www.github.com",
+    },
+];
+const iconArray = ['../images/gmail.png', '../images/slack.png', '../images/docs.png','../images/github.png'];
+const iconUrl = ['https://mail.google.com/', 'https://slack.com', 'https://docs.google.com/',"https://www.github.com"];
 
 let iter=0;
 let iconData = [];
@@ -36,7 +56,7 @@ function displayIcons() {
         var str = '';
         console.log('this is the icon name', icon.name, ' and url is', icon.url,index);
         str = `
-        <div class="row icon-padding">
+        <div class="row icon-padding bg-light"  style="height: 25%;box-shadow: #222222;">
             <div class="col-lg-12">
                 <a id=`+index+`>
                     <img id=icon"`+ index +` 
@@ -59,17 +79,23 @@ function displayIcons() {
 
 
 function displayWebPage(index) {
-    console.log('incoming',iconData);
     document.getElementById('main-web-view').src = iconData[index].url;
+    document.getElementById('split-web-view1').src=iconData[index].url;
 }
 function dragStart(ev) {
+    currIndex=ev.target.parentNode.id;
     ev.dataTransfer.effectAllowed='copy';
     ev.dataTransfer.setData("id", ev.target.getAttribute('id')+"|"+ev.target.parentNode.id);
     ev.dataTransfer.setDragImage(ev.target,10,10);
-    console.log("abcd",ev.target.parentNode.id,"*******");
     return true;
 }
 function dragEnter(ev) {
+    let targetData=[ev.target.getAttribute('id'),ev.target.parentNode.id];
+    let dropData = ev.dataTransfer.getData("id");
+    let dropItems = dropData.split("|");
+    console.log("Chal gailo",iconObj[currIndex].url);
+    const webview2 = document.getElementById('split-web-view2');
+    webview2.src=iconObj[currIndex].url;
     ev.preventDefault();
     return true;
 }
