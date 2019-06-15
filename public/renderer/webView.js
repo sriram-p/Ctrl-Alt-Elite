@@ -47,6 +47,15 @@ function displayIcons() {
 }
 
 function displayWebPage(id, url) {
-    console.log('incoming');
     document.getElementById('main-web-view').src = url;
+}
+
+function changeViews() {
+    if(document.getElementById('web-view').classList.contains('hide')) {
+        document.getElementById('web-view').classList.remove('hide');
+        document.getElementById('split-web-view').classList.add('hide');
+    } else {
+        document.getElementById('web-view').classList.add('hide');
+        document.getElementById('split-web-view').classList.remove('hide');
+    }
 }
