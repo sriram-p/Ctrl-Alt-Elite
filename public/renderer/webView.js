@@ -57,6 +57,7 @@ function displayIcons() {
     document.getElementById('icons-display').innerHTML = tempStr;
 }
 
+
 function displayWebPage(index) {
     console.log('incoming',iconData);
     document.getElementById('main-web-view').src = iconData[index].url;
@@ -91,3 +92,13 @@ function dragDrop(ev) {
     ev.preventDefault();
     return false;
 }
+function changeViews() {
+    if(document.getElementById('web-view').classList.contains('hide')) {
+        document.getElementById('web-view').classList.remove('hide');
+        document.getElementById('split-web-view').classList.add('hide');
+    } else {
+        document.getElementById('web-view').classList.add('hide');
+        document.getElementById('split-web-view').classList.remove('hide');
+    }
+}
+
